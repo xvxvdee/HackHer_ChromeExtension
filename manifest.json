@@ -8,6 +8,6 @@
         "default_icon":"logo1.png",
         "default_popup":"popup.html"
     },
-    "permissions":["activeTab", "notifications"]
+    "permissions":["notifications"]
 
 }
