@@ -1,10 +1,13 @@
-function notification() {
-    chrome.notitications.create(
-        {
-            title: 'title',
-            message: 'Time to take a break!',
-            iconUrl: 'logo2.png',
-            type: 'basic'
-        }
-    )
-}
+var options = {
+    type: "basic",
+    title: "My First Notif",
+    message: "Time to Take a Break",
+    iconUrl: "logo2.png"
+};
+
+chrome.notifications.create(options, callback);
+console.log('POP');
+
+function callback(){
+    console.log('Popup Done!');
+    }
