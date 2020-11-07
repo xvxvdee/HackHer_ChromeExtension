@@ -1,8 +1,21 @@
+// Notification 1
 var options = {
     type: "basic",
     title: "Stay Healthy",
-    message: "Time to Take a Break",
+    message: "Let's take a short break!",
     iconUrl: "logo2.png"
+};
+
+// Notification 2
+var options2 = {
+    type: "basic",
+    title: "Stay Healthy",
+    message: "Would you like to continue working?",
+    iconUrl: "logo2.png",
+    buttons: [
+        { title: "Yes" },
+        { title: "No" }
+    ]
 };
 
 function callback(){
@@ -44,12 +57,13 @@ function TIMER() {
                 time--;
                 if (countdownEl.innerHTML == '0:00') {
                     clearInterval(b)
-                    chrome.notifications.create(options, callback);
+                    // Calls the second Notification: Asks if you'd like to continue working
+                    chrome.notifications.create(options2, callback);
                 }   
             }
         }
     }
 }
 
-//Calling the Function
+// Calling the function: 
 TIMER()
