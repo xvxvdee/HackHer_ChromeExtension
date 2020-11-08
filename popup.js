@@ -1,4 +1,3 @@
-
 // Notification 1
 var options = {
     type: "basic",
@@ -21,49 +20,53 @@ var options2 = {
 function callback(){
     console.log('Popup Done!');
 }
-function BtnClick(){
+
+function buttclick(){
+    console.log('BUTTCLICK');
     TIMER()
-  
 }
+
 function TIMER() {
     // 20 MINUTE WORKING TIME Function:
-    const startingMinutes = 5;
-    let time = startingMinutes; // 1 minute * 60 seconds
+    const startingMinutes = 10;
+    let time = startingMinutes // * 60 ; // 1 minute * 60 seconds
     const countdownEl = document.getElementById('countdown')
     let a = setInterval(updateCountdown, 1000);
 
     function updateCountdown() {
-        const minutes = Math.floor(time/60);
+        let minutes = Math.floor(time/60);
         let seconds = time % 60;
 
         seconds = seconds < 10 ? '0' + seconds : seconds;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
 
         countdownEl.innerHTML = `${minutes}:${seconds}`;
         time--;
-        if (countdownEl.innerHTML == '0:00') {
+        if (countdownEl.innerHTML == '00:00') {
             clearInterval(a)
             chrome.notifications.create(options, callback);
             
             // BREAKTIME FUNCTION HERE: 
-            const startingSeconds = 2;
+            const startingSeconds = 5;
             let time = startingSeconds; // 1 minute * 60 seconds
             const countdownEl = document.getElementById('countdown')
             let b = setInterval(updateBreaktime, 1000);
 
             function updateBreaktime() {
-                const minutes = Math.floor(time/60);
+                let minutes = Math.floor(time/60);
                 let seconds = time % 60;
 
                 seconds = seconds < 10 ? '0' + seconds : seconds;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
 
                 countdownEl.innerHTML = `${minutes}:${seconds}`;
                 time--;
-                if (countdownEl.innerHTML == '0:00') {
+                if (countdownEl.innerHTML == '00:00') {
                     clearInterval(b)
                     // Calls the second Notification: Asks if you'd like to continue working
                     chrome.notifications.create(options2, callback);
-                    chrome.notifications.onButtonClicked.addListener(BtnClick);
 
+                    chrome.notifications.onButtonClicked.addListener(buttclick);
                 }   
             }
         }
@@ -72,4 +75,3 @@ function TIMER() {
 
 // Calling the function: 
 TIMER()
-
