@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name":"Stay healthy",
-    "description":"Let's users know when to take a break from screen",
+    "description":"Rest your eyes or look at something 20 feet away for 20 seconds after 20 minutes of working! Following the 20-20-20 Rule will relieve your eyes from Computer Vision Syndrome \n Digital eye strain, describing a group of eye/vision related problems resulting from prolonged computer, tablet, cell phone use.",
     "version":"1.0.0",
     "background":{
         "scripts":["background.js"]

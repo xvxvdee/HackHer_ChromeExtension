@@ -3,7 +3,7 @@ console.log("BACKGROUND");
 var options = {
     type: "basic",
     title: "Stay Healthy",
-    message: "Let's take a short break!",
+    message: "Time to rest your eyes!",
     iconUrl: "logo2.png"
 };
 
@@ -27,8 +27,8 @@ function BtnClick(){
 }
 function TIMER() {
     // 20 MINUTE WORKING TIME Function:
-    const startingMinutes = 5;
-    let time = startingMinutes; // 1 minute * 60 seconds
+    const startingMinutes = 1;
+    let time = startingMinutes * 60; // 1 minute * 60 seconds
     let timeNow;
     // const countdownEl = document.getElementById('countdown')
     let a = setInterval(updateCountdown, 1000);
@@ -46,7 +46,7 @@ function TIMER() {
             chrome.notifications.create(options, callback);
             
             // BREAKTIME FUNCTION HERE: 
-            const startingSeconds = 2;
+            const startingSeconds = 20;
             let time = startingSeconds; // 1 minute * 60 seconds
             // const countdownEl = document.getElementById('countdown');
             let b = setInterval(updateBreaktime, 1000);

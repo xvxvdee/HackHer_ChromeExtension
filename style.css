@@ -1,0 +1,41 @@
+body{
+    background-color:#fdf3fd;
+    padding:20px;
+    border:solid 5px #eddfff;
+  }
+  h1 {
+   color: #2c2f4e ; 
+   text-align: center; 
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-size: 35px 
+  }
+  
+  img{
+    width: 200px; 
+    padding: 5px;
+    border-radius:50%;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    border:solid 5px #54577c;
+  
+  }
+  
+  div {
+    padding:25px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #2c2f4e ; 
+  }
+  
+  ul{
+    padding:5px;
+    margin:auto;
+    text-align:center;
+    list-style-type: none;
+  }
+  
+  b{
+    text-align:center;
+  }
