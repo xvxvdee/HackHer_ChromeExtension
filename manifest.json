@@ -3,10 +3,14 @@
     "name":"Stay healthy",
     "description":"Let's users know when to take a break from screen",
     "version":"1.0.0",
+    "background":{
+        "scripts":["background.js"]
+    },
     "icons":{"128":"logo2.png"},
     "browser_action":{
         "default_icon":"logo1.png",
         "default_popup":"popup.html"
     },
     "permissions":["notifications"]
+
 }
