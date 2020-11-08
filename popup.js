@@ -30,14 +30,15 @@ function TIMER() {
     let a = setInterval(updateCountdown, 1000);
 
     function updateCountdown() {
-        const minutes = Math.floor(time/60);
+        let minutes = Math.floor(time/60);
         let seconds = time % 60;
 
         seconds = seconds < 10 ? '0' + seconds : seconds;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
 
         countdownEl.innerHTML = `${minutes}:${seconds}`;
         time--;
-        if (countdownEl.innerHTML == '0:00') {
+        if (countdownEl.innerHTML == '00:00') {
             clearInterval(a)
             chrome.notifications.create(options, callback);
             
@@ -48,14 +49,15 @@ function TIMER() {
             let b = setInterval(updateBreaktime, 1000);
 
             function updateBreaktime() {
-                const minutes = Math.floor(time/60);
+                let minutes = Math.floor(time/60);
                 let seconds = time % 60;
 
                 seconds = seconds < 10 ? '0' + seconds : seconds;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
 
                 countdownEl.innerHTML = `${minutes}:${seconds}`;
                 time--;
-                if (countdownEl.innerHTML == '0:00') {
+                if (countdownEl.innerHTML == '00:00') {
                     clearInterval(b)
                     // Calls the second Notification: Asks if you'd like to continue working
                     chrome.notifications.create(options2, callback);
